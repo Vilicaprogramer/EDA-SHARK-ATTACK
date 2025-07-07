@@ -1,0 +1,10 @@
+[client]
+showSidebarNavigation = false
+
+[theme]
+base = "dark"
+primaryColor = "#888888"       # Gris medio (para botones y enlaces)
+backgroundColor = "#0b0c10"    # Casi negro (para fondo principal)
+secondaryBackgroundColor = "#1f1f1f"  # Gris oscuro (para sidebar, widgets)
+textColor = "#e0e0e0"          # Gris claro para el texto
+font = "sans serif"            # O prueba "monospace" para un estilo más técnico

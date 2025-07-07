@@ -3,23 +3,29 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 import plotly.express as px
+from funcionalidades import *
 
-df_shark = pd.read_csv(r'C:\Users\Vicen\Visual Code\The_Bridge\Personal_2506_dsft_thebridge\2-Analytics\EDA\EDA-SHARK-ATTACK\src\data\shark_attack_clean.csv', index_col=1)
 
-# Configurar el tema
-st.set_page_config(page_title="Ataques de Tiburones", layout="wide", page_icon="🦈")
+page_configuration()
+    
+#st.page_link("pages/page_2.py", label="Page 2", icon="2️⃣", disabled=True)
+st.sidebar.page_link("http://www.google.com", label="Google", icon="🌎")
 
 # Título
 st.title("🦈 Análisis de Ataques de Tiburones")
 st.markdown("""
-Una exploración visual de los ataques de tiburones en los últimos 100 años.
+ ## Una exploración visual de los ataques de tiburones en los últimos 100 años.
 """)
 
-# Barra lateral
-selectbox = st.sidebar.selectbox('Seleccion de Pais para ', df_shark['country'].unique(), placeholder='Elige un país', index= None)
-selectslider = st.sidebar.select_slider('Selecciona un rango de años', sorted(df_shark['year'].unique()))
 
-# Evolución de los ataques por años
+""" selectbox = st.sidebar.selectbox('Seleccion de Pais para ', df_shark['country'].unique(), placeholder='Elige un país', index= None)
+years = list(range(int(df_shark['year'].min()), int(df_shark['year'].max()) + 1))
+selectslider = st.sidebar.select_slider(
+    'Selecciona un rango de años',
+    options=years,
+    value=(years[0], years[-1])  # Rango por defecto
+) """
+""" # Evolución de los ataques por años
 anos_disp= df_shark['year'].value_counts().sort_index(ascending=True).to_frame().reset_index()
 fig_evo_x_anos = px.line(anos_disp, x="year", y="count")
 st.subheader('Evolución de los ataques por años')
@@ -62,10 +68,6 @@ else:
     )
 
 st.subheader('Top 5 actividades por decada')
-event = st.plotly_chart(fig_top5)
+event = st.plotly_chart(fig_top5) """
 
-
-
-
-
-
+    
