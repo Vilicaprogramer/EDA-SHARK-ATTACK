@@ -7,8 +7,7 @@ Este proyecto analiza más de un siglo de incidentes reales utilizando datos del
 
 📁 Estructura del Proyecto
 bash
-Copiar
-Editar
+```
 EDA-SHARK-ATTACK/
 │
 ├── 📓 Memoria_Shark_Attacks_ES.ipynb    # Análisis completo, comentado
@@ -20,9 +19,9 @@ EDA-SHARK-ATTACK/
 │   ├── notebooks/                       # Otros notebooks
 │   ├── utils/                           # Funciones auxiliares
 🚀 Cómo Ejecutar el Proyecto
+```
 bash
-Copiar
-Editar
+
 # 1. Clona el repositorio
 git clone https://github.com/Vilicaprogramer/EDA-SHARK-ATTACK.git
 cd EDA-SHARK-ATTACK
