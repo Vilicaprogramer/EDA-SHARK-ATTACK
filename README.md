@@ -1,7 +1,9 @@
-<p align="center"> <img src="https://raw.githubusercontent.com/Vilicaprogramer/EDA-SHARK-ATTACK/master/docs/banner_shark.png" alt="Shark banner" width="600"> </p> <h1 align="center">EDA: Ataques de Tiburón 🦈</h1> <p align="center"><em>¿Es tan peligroso el océano como creemos?</em></p>
+<p align="center"> <img src=r".\img\Shark.jpg" alt="Shark banner" width="600"> </p> <h1 align="center">EDA: Ataques de Tiburón 🦈</h1> <p align="center"><em>¿Es tan peligroso el océano como creemos?</em></p>
+
 📊 Exploración de Datos de Ataques de Tiburón
 ¿Cuán justificado es temer a los tiburones?
 Este proyecto analiza más de un siglo de incidentes reales utilizando datos del Global Shark Attack File.
+
 
 📁 Estructura del Proyecto
 bash
