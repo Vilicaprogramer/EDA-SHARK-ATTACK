@@ -1,54 +1,60 @@
+<p align="center"> <img src="https://raw.githubusercontent.com/Vilicaprogramer/EDA-SHARK-ATTACK/master/docs/banner_shark.png" alt="Shark banner" width="600"> </p> <h1 align="center">EDA: Ataques de Tiburón 🦈</h1> <p align="center"><em>¿Es tan peligroso el océano como creemos?</em></p>
+📊 Exploración de Datos de Ataques de Tiburón
+¿Cuán justificado es temer a los tiburones?
+Este proyecto analiza más de un siglo de incidentes reales utilizando datos del Global Shark Attack File.
 
-<p align="center">
-  <img src="https://raw.githubusercontent.com/Vilicaprogramer/EDA-SHARK-ATTACK/master/docs/banner_shark.png" alt="Shark banner" width="600">
-</p>
-
-# EDA: Ataques de Tiburón 🦈
-
-> **¿Cuán justificado es temer a los tiburones?**  
-> Análisis de un siglo de incidentes documentados.
-
----
-
-## 📑 Resumen
-Este repositorio contiene:
-
-* `Memoria_Shark_Attacks_ES.ipynb` – Notebook interactivo con todo el flujo de análisis, limpio y comentado.    
-* `src/` – Scripts auxiliares para limpieza y descargas.  
-
-## 🚀 Cómo reproducir
-
-```bash
-# Clonar el proyecto
+📁 Estructura del Proyecto
+bash
+Copiar
+Editar
+EDA-SHARK-ATTACK/
+│
+├── 📓 Memoria_Shark_Attacks_ES.ipynb    # Análisis completo, comentado
+├── src/
+│   ├── app/                             # App Streamlit
+│   │   ├── img/                         # Imágenes e infografías
+│   │   ├── pages/                       # Módulos de navegación
+│   ├── data/                            # Datos procesados
+│   ├── notebooks/                       # Otros notebooks
+│   ├── utils/                           # Funciones auxiliares
+🚀 Cómo Ejecutar el Proyecto
+bash
+Copiar
+Editar
+# 1. Clona el repositorio
 git clone https://github.com/Vilicaprogramer/EDA-SHARK-ATTACK.git
 cd EDA-SHARK-ATTACK
 
-# (opcional) Crear entorno
-python -m venv .venv && source .venv/bin/activate
-pip install pandas numpy seaborn matplotlib plotly streamlit
+# 2. (Opcional) Crea un entorno virtual
+python -m venv .venv
+source .venv/bin/activate  # Linux/macOS
+.venv\Scripts\activate     # Windows
 
-# Lanzar Jupyter
+# 3. Instala dependencias
+pip install pandas numpy seaborn matplotlib plotly streamli
+
+# 4. Lanza la app
 streamlit run ./src/app/shark_attacks_app.py
-```
+🔬 Hipótesis Evaluadas
+Nº	Pregunta	Resultado
+1️⃣	¿El miedo a tiburones es irracional?	✅ Confirmado
+2️⃣	¿Los ataques van en descenso?	➖ Tendencia débil
+3️⃣	¿El riesgo por turista no aumenta?	✅ Confirmado
+4️⃣	¿Los hombres sufren más ataques?	✅ Confirmado
+5️⃣	¿El surf es la actividad más arriesgada?	✅ Confirmado
 
-## 🔎 Hipótesis evaluadas
+🛠️ Tecnologías Usadas
+🐍 Python (pandas, seaborn, matplotlib, plotly)
 
-| # | Pregunta | Resultado |
-|---|-----------|-----------|
-| 1 | El miedo es irracional | ✅ Apoyada |
-| 2 | Los ataques disminuyen | ➖ Tendencia débil |
-| 3 | La números relativos no aumenta | ✅ Apoyada |
-| 4 | Mayor riesgo en hombres | ✅ Apoyada |
-| 5 | Surf es la actividad con más ataques | ✅ Apoyada |
+🖼️ Streamlit (para visualización interactiva)
 
+📈 Jupyter Notebook
 
-## 📈 Vistazo rápido
-<img src="docs/preview_timeline.png" width="600">
+📊 Análisis exploratorio de datos (EDA)
 
-*Figura 1 – Evolución de incidentes anuales.*
+🤝 Contribuciones
+¡Contribuciones son bienvenidas!
+Si tienes ideas, errores que corregir o mejoras, abre un issue o un pull request.
 
-## 🤝 Contribuir
-¡Se aceptan *pull requests*! Revisa primero las **issues** abiertas.
-
-## 📝 Licencia
-MIT. Usa, comparte y adapta el proyecto siempre citando la fuente.
+🧠 Autor
+Vicen – Proyecto personal dentro del bootcamp de Data Science en The Bridge (2025).
