@@ -9,4 +9,6 @@ from funcionalidades import *
 
 page_configuration()
 fondeo_pantalla()
+st.markdown('# ¿Qué tan irracional es ese miedo?')
 mapa_dispersion()
+barras_paises()

@@ -96,6 +96,15 @@ def mapa_dispersion():
         event = st.plotly_chart(geo_fig)
         return event
     
+def barras_paises():
+    with st.expander('Número de ataques por pais en los últimos 100 años'):
+        b_paises= df_shark.groupby('country').agg('size').sort_values(ascending=False).to_frame().reset_index().rename(columns={0:'count'})
+        fig = px.bar(b_paises.iloc[:25], 'country', 'count', title="25 paises con más ataques")
+        fig.add_hline(50, line_width=3, line_dash="dash", line_color="red")
+        fig.add_annotation(x='MOZAMBIQUE', y=50, text="Pasan de 50 ataques en 100 años", showarrow=True, arrowhead=1, arrowsize=3, arrowcolor='red', bgcolor='red') 
+        event = st.plotly_chart(fig)
+        return event
+
 
 def ataques_ano():
     st.markdown('### Número de ataques por año')
@@ -206,7 +215,7 @@ def actividades_x_ano():
     # Ahora unimos con país para graficar después
     df_top5 = df_shark.merge(top5_by_decade[['decade', 'activity']], on=['decade', 'activity'])
     summary = (
-    df_top5.groupby(['decade', 'activity', 'country'])
+    df_top5.groupby(['decade', 'activity'])
     .size()
     .reset_index(name='count')
     )
@@ -218,37 +227,56 @@ def actividades_x_ano():
             size="count",
             size_max= 40
         )
+    fig.add_hrect(y0=5, y1=7, line_width=0, fillcolor="red", opacity=0.4)
+    fig.add_shape(
+        type="rect",
+        x0=1960,
+        x1=2010,
+        y0=9,
+        y1=11,
+        fillcolor="green",
+        opacity=0.4,
+        line_width=0,
+        layer="below"
+    )
+
     event = st.plotly_chart(fig)
     return event
 
 def quesitos_varios():
     fig = make_subplots(rows=2, cols=2, specs=[[{'type':'domain'}, {'type':'domain'}],
-                                           [{'type':'domain'}, {'type':'domain'}]])
+                                               [{'type':'domain'}, {'type':'domain'}]])
 
-    type_counts = df_shark['type'].value_counts()
+    colores_vivos = ['#FF6F61', '#6B5B95', '#88B04B', '#F7CAC9', '#92A8D1', '#955251', '#B565A7', '#009B77']
+
+    type_counts = df_shark.loc[df_shark['type'].isin(['Unprovoked', 'Provoked', 'Watercraft', 'Invalid']), 'type'].value_counts()
     fig.add_trace(go.Pie(labels=type_counts.index, values=type_counts.values,
-                        title={'text': 'Tipo de Ataque', 'font': {'size': 18}}), row=1, col=1)
+                         marker=dict(colors=colores_vivos),
+                         title={'text': 'Tipo de Ataque', 'font': {'size': 18}}), row=1, col=1)
 
-    sex_counts = df_shark['sex'].value_counts()
+    sex_counts = df_shark.loc[df_shark['sex'] != 'N', 'sex'].value_counts()
     fig.add_trace(go.Pie(labels=sex_counts.index, values=sex_counts.values,
-                        title={'text': 'Sexo', 'font': {'size': 18}}), row=1, col=2)
+                         marker=dict(colors=colores_vivos),
+                         title={'text': 'Sexo', 'font': {'size': 18}}), row=1, col=2)
 
     fatal_counts = df_shark['fatal_y_n'].value_counts()
     fig.add_trace(go.Pie(labels=fatal_counts.index, values=fatal_counts.values,
-                        title={'text': '¿Fatal?', 'font': {'size': 18}}), row=2, col=1)
+                         marker=dict(colors=colores_vivos),
+                         title={'text': '¿Fatal?', 'font': {'size': 18}}), row=2, col=1)
 
     ocio_counts = df_shark['ocio_o_no'].value_counts()
     fig.add_trace(go.Pie(labels=ocio_counts.index, values=ocio_counts.values,
-                        title={'text': 'Actividad de Ocio o no', 'font': {'size': 18}}), row=2, col=2)
+                         marker=dict(colors=colores_vivos),
+                         title={'text': 'Actividad de Ocio o no', 'font': {'size': 18}}), row=2, col=2)
 
     fig.update_layout(
         title={
             'text': "Resumen de Ataques de Tiburón",
-            'font': {'size': 28},     
-            'x': 0.5,                 
-            'xanchor': 'center'       
+            'font': {'size': 28},
+            'x': 0.5,
+            'xanchor': 'center'
         },
-        showlegend= False,
+        showlegend=False,
         height=1000
     )
     event = st.plotly_chart(fig)
@@ -260,3 +288,34 @@ def porcentaje_ano():
     fig.add_hline(0.000021, line_width=3, line_dash="dash", line_color="red" )
     event = st.plotly_chart(fig)
     return event
+
+
+def datos_finales():
+    df_totales_x_pais = pd.read_csv(r"C:\Users\Vicen\Visual Code\The_Bridge\Personal_2506_dsft_thebridge\2-Analytics\EDA\EDA-SHARK-ATTACK\src\data\totales_x_pais.csv")
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        country = st.selectbox("Pais", 
+                               sorted(df_totales_x_pais['country']),
+                               index=None,
+                               placeholder="Select a country...")
+    if country:
+        total_ataques = df_totales_x_pais.loc[df_totales_x_pais['country'] == country, 'totales_ataques'].item()
+        total_turistas = df_totales_x_pais.loc[df_totales_x_pais['country'] == country, 'totales_turistas'].item()
+    else:    
+        total_ataques = df_totales['count_ataques'].sum()
+        total_turistas = df_totales['count_turistas'].sum()
+
+    with col2:
+        st.markdown("""### Numero total \n ### Ataques""")
+        st.metric(" ", total_ataques)
+        
+
+    with col3:
+        st.markdown("""### Numero total \n ### Turistas""")
+        st.metric(" ", round(total_turistas))
+
+    
+    st.image(r"C:\Users\Vicen\Visual Code\The_Bridge\Personal_2506_dsft_thebridge\2-Analytics\EDA\EDA-SHARK-ATTACK\src\app\img\Infografia-probabilidad-de-muerte-segun-deporte-de-riesgo.jpg")
+    st.markdown("## Ataques de tiburón")
+    st.markdown(f"#### 1 ataque por cada {round(total_turistas/total_ataques)} una probabilidad de {(total_ataques/total_turistas)*100:.6f}")

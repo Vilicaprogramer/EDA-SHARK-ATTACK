@@ -7,3 +7,4 @@ from funcionalidades import *
 
 page_configuration()
 fondeo_pantalla()
+datos_finales()
