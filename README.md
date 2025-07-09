@@ -1,7 +1,8 @@
 <p align="center"> <img src=r".\img\Shark.jpg" alt="Shark banner" width="600"> </p> <h1 align="center">EDA: Ataques de Tiburón 🦈</h1> <p align="center"><em>¿Es tan peligroso el océano como creemos?</em></p>
 
-📊 Exploración de Datos de Ataques de Tiburón
-¿Cuán justificado es temer a los tiburones?
+📊 ### Exploración de Datos de Ataques de Tiburón
+
+**¿Cuán justificado es temer a los tiburones?**
 Este proyecto analiza más de un siglo de incidentes reales utilizando datos del Global Shark Attack File.
 
 
@@ -22,6 +23,7 @@ EDA-SHARK-ATTACK/
 ```
 bash
 
+```
 # 1. Clona el repositorio
 git clone https://github.com/Vilicaprogramer/EDA-SHARK-ATTACK.git
 cd EDA-SHARK-ATTACK
@@ -36,7 +38,8 @@ pip install pandas numpy seaborn matplotlib plotly streamli
 
 # 4. Lanza la app
 streamlit run ./src/app/shark_attacks_app.py
-🔬 Hipótesis Evaluadas
+```
+🔬 **Hipótesis Evaluadas**
 Nº	Pregunta	Resultado
 1️⃣	¿El miedo a tiburones es irracional?	✅ Confirmado
 2️⃣	¿Los ataques van en descenso?	➖ Tendencia débil
@@ -44,7 +47,7 @@ Nº	Pregunta	Resultado
 4️⃣	¿Los hombres sufren más ataques?	✅ Confirmado
 5️⃣	¿El surf es la actividad más arriesgada?	✅ Confirmado
 
-🛠️ Tecnologías Usadas
+🛠️ **Tecnologías Usadas**
 🐍 Python (pandas, seaborn, matplotlib, plotly)
 
 🖼️ Streamlit (para visualización interactiva)
@@ -53,9 +56,9 @@ Nº	Pregunta	Resultado
 
 📊 Análisis exploratorio de datos (EDA)
 
-🤝 Contribuciones
+🤝 **Contribuciones**
 ¡Contribuciones son bienvenidas!
 Si tienes ideas, errores que corregir o mejoras, abre un issue o un pull request.
 
-🧠 Autor
+🧠 **Autor**
 Vicen – Proyecto personal dentro del bootcamp de Data Science en The Bridge (2025).
