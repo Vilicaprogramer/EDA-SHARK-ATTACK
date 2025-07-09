@@ -39,15 +39,16 @@ pip install pandas numpy seaborn matplotlib plotly streamli
 # 4. Lanza la app
 streamlit run ./src/app/shark_attacks_app.py
 ```
-🔬 **Hipótesis Evaluadas**
-Nº	Pregunta	Resultado
-1️⃣	¿El miedo a tiburones es irracional?	✅ Confirmado
-2️⃣	¿Los ataques van en descenso?	➖ Tendencia débil
-3️⃣	¿El riesgo por turista no aumenta?	✅ Confirmado
-4️⃣	¿Los hombres sufren más ataques?	✅ Confirmado
-5️⃣	¿El surf es la actividad más arriesgada?	✅ Confirmado
+#🔬 **Hipótesis Evaluadas**
+| Nº|	Pregunta	| Resultado|
+|---|-----------|-----------|
+|1️⃣|	¿El miedo a tiburones es irracional?|	✅ Confirmado|
+|2️⃣|	¿Los ataques van en descenso?|	➖ Tendencia débil|
+|3️⃣|	¿El riesgo por turista no aumenta?|	✅ Confirmado|
+|4️⃣|	¿Los hombres sufren más ataques?|	✅ Confirmado|
+|5️⃣|	¿El surf es la actividad más arriesgada?|	✅ Confirmado|
 
-🛠️ **Tecnologías Usadas**
+#🛠️ **Tecnologías Usadas**
 🐍 Python (pandas, seaborn, matplotlib, plotly)
 
 🖼️ Streamlit (para visualización interactiva)
@@ -56,9 +57,9 @@ Nº	Pregunta	Resultado
 
 📊 Análisis exploratorio de datos (EDA)
 
-🤝 **Contribuciones**
+#🤝 **Contribuciones**
 ¡Contribuciones son bienvenidas!
 Si tienes ideas, errores que corregir o mejoras, abre un issue o un pull request.
 
-🧠 **Autor**
+#🧠 **Autor**
 Vicen – Proyecto personal dentro del bootcamp de Data Science en The Bridge (2025).
