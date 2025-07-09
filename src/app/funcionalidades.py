@@ -52,7 +52,7 @@ def fondeo_pantalla():
         '''
         st.markdown(page_bg_img, unsafe_allow_html=True)
 
-    set_png_as_page_bg(r'C:\Users\Vicen\Visual Code\The_Bridge\Personal_2506_dsft_thebridge\2-Analytics\EDA\EDA-SHARK-ATTACK\src\app\img\Shark.jpg')
+    set_png_as_page_bg(r'.\img\Shark.jpg')
 
 
 def mapa_dispersion():
@@ -193,9 +193,9 @@ def turismo_ano():
 
 def presentacion():    
     if st.button('Change'):
-        return st.image(r"C:\Users\Vicen\Visual Code\The_Bridge\Personal_2506_dsft_thebridge\2-Analytics\EDA\EDA-SHARK-ATTACK\src\app\img\shark_4k.jpg", caption="Fear the Shark")  
+        return st.image(r".\img\shark_4k.jpg", caption="Fear the Shark")  
     else:
-        return st.image(r"C:\Users\Vicen\Visual Code\The_Bridge\Personal_2506_dsft_thebridge\2-Analytics\EDA\EDA-SHARK-ATTACK\src\app\img\playa.jpg", caption="Sunrise beach")
+        return st.image(r".\img\playa.jpg", caption="Sunrise beach")
     
 
 def actividades_x_ano():
@@ -291,7 +291,7 @@ def porcentaje_ano():
 
 
 def datos_finales():
-    df_totales_x_pais = pd.read_csv(r"C:\Users\Vicen\Visual Code\The_Bridge\Personal_2506_dsft_thebridge\2-Analytics\EDA\EDA-SHARK-ATTACK\src\data\totales_x_pais.csv")
+    df_totales_x_pais = pd.read_csv(r"..\data\totales_x_pais.csv")
     col1, col2, col3 = st.columns(3)
 
     with col1:
@@ -308,14 +308,14 @@ def datos_finales():
 
     with col2:
         st.markdown("""### Numero total \n ### Ataques""")
-        st.metric(" ", total_ataques)
+        st.metric(" ", f'{total_ataques:,}')
         
 
     with col3:
         st.markdown("""### Numero total \n ### Turistas""")
-        st.metric(" ", round(total_turistas))
+        st.metric(" ", f'{round(total_turistas):,}')
 
     
-    st.image(r"C:\Users\Vicen\Visual Code\The_Bridge\Personal_2506_dsft_thebridge\2-Analytics\EDA\EDA-SHARK-ATTACK\src\app\img\Infografia-probabilidad-de-muerte-segun-deporte-de-riesgo.jpg")
+    st.image(r".\img\Infografia-probabilidad-de-muerte-segun-deporte-de-riesgo.jpg")
     st.markdown("## Ataques de tiburón")
-    st.markdown(f"#### 1 ataque por cada {round(total_turistas/total_ataques)} una probabilidad de {(total_ataques/total_turistas)*100:.6f}")
+    st.markdown(f"#### 1 ataque por cada {round(total_turistas/total_ataques):,} una probabilidad de {(total_ataques/total_turistas)*100:.6f}")
