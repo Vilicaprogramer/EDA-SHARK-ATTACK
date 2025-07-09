@@ -9,7 +9,7 @@ from funcionalidades import *
 page_configuration()
     
 #st.page_link("pages/page_2.py", label="Page 2", icon="2️⃣", disabled=True)
-st.sidebar.page_link("http://www.google.com", label="Google", icon="🌎")
+# st.sidebar.page_link("http://www.google.com", label="Google", icon="🌎")
 
 # Título
 st.title("🦈 Análisis de Ataques de Tiburones")

@@ -7,7 +7,4 @@ from funcionalidades import *
 
 
 page_configuration() # Siempre debe ser el primero en ejecutarse
-fondeo_pantalla()
-ataques_ano()
-turismo_ano()
-mapa_dispersion()
+presentacion()
