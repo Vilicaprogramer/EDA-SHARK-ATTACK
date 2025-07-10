@@ -26,7 +26,7 @@ bash
 ```
 # 1. Clona el repositorio
 git clone https://github.com/Vilicaprogramer/EDA-SHARK-ATTACK.git
-cd EDA-SHARK-ATTACK
+cd EDA-SHARK-ATTACK/src/app
 
 # 2. (Opcional) Crea un entorno virtual
 python -m venv .venv
@@ -37,7 +37,7 @@ source .venv/bin/activate  # Linux/macOS
 pip install pandas numpy seaborn matplotlib plotly streamli
 
 # 4. Lanza la app
-streamlit run ./src/app/shark_attacks_app.py
+streamlit run shark_attacks_app.py
 ```
 #🔬 **Hipótesis Evaluadas**
 | Nº|	Pregunta	| Resultado|

@@ -7,7 +7,7 @@ import plotly.express as px
 import base64
 import os
 
-df_shark = pd.read_csv(r'..\data\shark_attack_enriquecido.csv')
+df_shark = pd.read_csv(r'../data/shark_attack_enriquecido.csv')
 df_tourism = pd.read_csv(r'../data/turismo_mundial.csv')
 df_totales = pd.read_csv(r'../data/totales.csv')
 df_tourism.drop(['Unnamed: 0', '1994', '1993', '2023', '2024'], axis=1, inplace=True)
@@ -303,8 +303,8 @@ def datos_finales():
         total_ataques = df_totales_x_pais.loc[df_totales_x_pais['country'] == country, 'totales_ataques'].item()
         total_turistas = df_totales_x_pais.loc[df_totales_x_pais['country'] == country, 'totales_turistas'].item()
     else:    
-        total_ataques = df_totales['count_ataques'].sum()
-        total_turistas = df_totales['count_turistas'].sum()
+        total_ataques = df_totales_x_pais['totales_ataques'].sum()
+        total_turistas = df_totales_x_pais['totales_turistas'].sum()
 
     with col2:
         st.markdown("""### Numero total \n ### Ataques""")
